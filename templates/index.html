@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Meeting Transcriptions</h1>
+    <h3>Past meeting transcriptions by ID:</h3>
+
+    <ul>
+        {% for mid in meeting_ids: %}
+        <li><a href="{{ url_for('meeting', id=[mid]) }}">{{ mid }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

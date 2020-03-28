@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='transcript.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h2>Transcriptions for {{ meeting_id }}</h2>
+    <div>
+        {% for t in transcripts %}
+            <div class="t_container">
+                <p><b>{{ t.speaker_name }}:</b> {{ t.message }}</p>
+                <p class="datetime"><small><i>{{ t.spoken_at }}</i></small></p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
