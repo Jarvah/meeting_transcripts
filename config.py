@@ -7,5 +7,6 @@ TRANSCRIPTIONS_TABLE_COLUMNS = ['meeting_id', 'speaker_name', 'message', 'spoken
 class Config():
     proc = subprocess.Popen('heroku config:get DATABASE_URL -a meeting-transcript', stdout=subprocess.PIPE, shell=True)
     DATABASE_URL = proc.stdout.read().decode('utf-8').strip() + '?sslmode=require'
+    print(DATABASE_URL)
     SQLALCHEMY_DATABASE_URI = DATABASE_URL
     SQLALCHEMY_TRACK_MODIFICATIONS = False
