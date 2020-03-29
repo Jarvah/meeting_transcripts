@@ -4,11 +4,14 @@ import re
 from flask_sqlalchemy import SQLAlchemy
 from config import *
 import datetime
+import logging
+import sys
 app = Flask(__name__)
 
 app.config.from_object(Config)
 db = SQLAlchemy(app)
-
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 import model
 
 
