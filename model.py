@@ -1,13 +1,9 @@
 import os
 import psycopg2
 from app import db
-import datetime
 # import subprocess
 # proc = subprocess.Popen('heroku config:get DATABASE_URL -a meeting-transcript', stdout=subprocess.PIPE, shell=True)
 # DATABASE_URL = proc.stdout.read().decode('utf-8').strip()
-# print("db", DATABASE_URL)
-# print(type(DATABASE_URL))
-# # print(type(DATABASE_URL))
 # conn = psycopg2.connect(str(DATABASE_URL), sslmode='require')
 
 

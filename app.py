@@ -2,8 +2,6 @@ from flask import Flask, request, jsonify, render_template, abort, make_response
 import json
 import re
 from flask_sqlalchemy import SQLAlchemy
-import os
-import subprocess
 from config import *
 import datetime
 app = Flask(__name__)
@@ -46,7 +44,6 @@ def submit():
     except json.decoder.JSONDecodeError:
         abort(400, "Request body not in JSON")
 
-    print(data)
     for col in TRANSCRIPTIONS_TABLE_COLUMNS:
         if col not in data:
             abort(400, "Missing field: {}".format(col))
