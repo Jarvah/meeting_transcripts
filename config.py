@@ -10,5 +10,5 @@ class Config():
     # proc = subprocess.Popen('heroku config:get DATABASE_URL -a meeting-transcript', stdout=subprocess.PIPE, shell=True)
     # DATABASE_URL = proc.stdout.read().decode('utf-8').strip() + '?sslmode=require'
     # print(DATABASE_URL)
-    SQLALCHEMY_DATABASE_URI = os.environ.get['DATABASE_URL']
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
