@@ -1,6 +1,6 @@
 import subprocess
 import os
-basedir = os.path.abspath(os.path.dirname(__file__))
+#basedir = os.path.abspath(os.path.dirname(__file__))
 
 MEETING_ID_PATTERN = '^meet-[a-z]{5}$'
 TIMESTAMP_PATTERN = '\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z'
