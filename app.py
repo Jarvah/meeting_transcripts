@@ -7,7 +7,6 @@ import datetime
 import logging
 import sys
 app = Flask(__name__)
-
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 
@@ -60,14 +59,18 @@ def submit():
     except ValueError:
         abort(400, "Invalid datetime")
 
+
     data = model.Transcript(meeting_id=data["meeting_id"],
                             speaker_name=data["speaker_name"],
                             message=data['message'],
                             spoken_at=data["spoken_at"])
     db.session.add(data)
     db.session.commit()
-
-    return make_response(jsonify(data.to_dict()), 201)
+    response = {
+        "status_code": 200,
+        "message": "Successfully add to database"
+    }
+    return make_response(jsonify(response))
 
 
 if __name__ == "__main__":

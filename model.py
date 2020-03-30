@@ -22,13 +22,5 @@ class Transcript(db.Model):
         self.message = message
         self.spoken_at = spoken_at
 
-    def to_dict(self):
-        data = {
-            'id': self.id,
-            'meeting_id': self.meeting_id,
-            'speaker_name': self.speaker_name,
-            'message': self.message,
-            'spoken_at': self.spoken_at
-        }
-        return data
+
 
