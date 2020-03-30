@@ -17,5 +17,5 @@ app depolyed on https://meeting-transcript.herokuapp.com/
     "spoken_at": "2020-03-21T18:01:52Z"
 }
 ```
-Server will return 201 if the info successfully stored in the database
+Server will return 200 if the info successfully stored in the database
 If 400, check the error message. Make sure there is no missing field and the format for `meeting_id` and `spoken_at` is correct.
