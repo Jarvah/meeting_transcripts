@@ -10,8 +10,7 @@ app = Flask(__name__)
 
 app.config.from_object(Config)
 db = SQLAlchemy(app)
-app.logger.addHandler(logging.StreamHandler(sys.stdout))
-app.logger.setLevel(logging.ERROR)
+
 import model
 
 
@@ -33,7 +32,7 @@ def index():
 def meeting():
     meeting_id = request.args.get('id')
     transcripts = db.session.query(model.Transcript).filter(model.Transcript.meeting_id == meeting_id)\
-        .order_by(model.Transcript.spoken_at.asc())
+        .order_by(model.Transcript.spoken_at.desc())
 
     return render_template('transcript.html', meeting_id=meeting_id, transcripts=transcripts)
 

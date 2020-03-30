@@ -8,7 +8,7 @@ app depolyed on https://meeting-transcript.herokuapp.com/
 * url: <base_url>/submit
 * Headers:
   * KEY:Content-Type:application/json
-* Body: [raw]
+* Body:
 ```json
 {
     "meeting_id": "meet-hello",
